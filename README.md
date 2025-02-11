@@ -1,6 +1,7 @@
 # Pizzeria & Trattoria - restaurant page
 
-This is a project made as a part of theodinproject.com curriculum. It's a website of an imaginary restaurant, including tabs for the home page, menu, as well as a contact info tab. The tab switching is implemented purely through JS.
+This is a project made as a part of theodinproject.com curriculum. It's a website of an imaginary restaurant, including tabs for the home page, menu, as well as a contact info tab. The tab switching is implemented purely through JS. <br>
+You can view a Demo at: https://ktotopawel.github.io/restaurant/
 
 
 
