@@ -156,6 +156,7 @@ body {
   height: 3px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  filter: saturate(50%);
 
   .green {
     background: green;
@@ -271,6 +272,7 @@ body {
 #menu,
 #kontakt {
   transition: 200ms ease-in-out;
+  filter: saturate(50%);
 }
 
 #o-nas:hover,
@@ -289,7 +291,6 @@ body {
 
 .hero {
   box-sizing: border-box;
-  color: var(--dark);
   background: var(--white);
   padding: var(--large-padding);
   border-radius: 1rem;
@@ -308,7 +309,9 @@ body {
 .hero-txt {
   display: flex;
   flex-direction: column;
+  align-content: center;
   max-width: 60ch;
+  margin-left: 1rem;
   h3 {
     font-size: 2rem;
     margin-bottom: 2rem;
@@ -347,30 +350,38 @@ body {
 }
 
 .review-tile {
+	box-sizing: border-box;
   background: var(--white);
   margin-bottom: 0.5rem;
   display: inline-block;
   padding: var(--large-padding);
   border-radius: 1rem;
+  width: 100%;
 
   .name {
     font-style: italic;
     font-size: 24px;
     margin-bottom: 0.5rem;
+	font-weight: 500;
+  }
+
+  .review {
+	text-align: center;
+	max-width: 60ch;
+	font-size: 1.25rem;
   }
 
   img {
-	margin-top: 1rem;
-	width: 100%;
-	max-height: 50%;
-	border-radius: 1rem;
+	position: relative;
+    margin-top: 1rem;
+    width: 100%;
+    max-height: 50%;
+    border-radius: 1rem;
   }
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  box-sizing: border-box;
   width: 100%;
   text-align: center;
   padding: 1rem;
