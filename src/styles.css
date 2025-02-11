@@ -402,6 +402,10 @@ body {
 		margin-bottom: 1.5rem;
 		list-style: decimal;
 		margin-left: 1rem;
+		width: calc(100% - 2rem);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 
 		&:last-child {
 			border-bottom: none;
@@ -412,6 +416,7 @@ body {
 
 	& li {
 		margin: 1rem 0;
+		width: max(60%, 500px);
 
 		& h3 {
 			font-size: 1.5rem;
