@@ -1,7 +1,8 @@
 import pizzaHero from "../imgs/pizza.jpg";
-import reviewPizza from "../imgs/rw-pizza.jpg"
-import reviewPizza1 from "../imgs/rw-pizza1.jpg"
-import reviewPizza2 from "../imgs/rw-pizza2.jpg"
+import reviewPizza from "../imgs/rw-pizza.jpg";
+import reviewPizza1 from "../imgs/rw-pizza1.jpg";
+import reviewPizza2 from "../imgs/rw-pizza2.jpg";
+import { clearPage, createContactPage } from "..";
 
 class Hero {
   constructor() {
@@ -45,13 +46,18 @@ class Hero {
     this.tile.appendChild(this.heroTxt);
     this.tile.appendChild(this.img);
     this.appendToContent(this.tile);
+
+    this.orderBtn.addEventListener("click", () => {
+      clearPage();
+      createContactPage();
+    });
   }
 }
 
 function createMasonryReview() {
   let reviewArr = [];
 
-  let container = document.getElementById('content');
+  let container = document.getElementById("content");
 
   function makeReviewArr() {
     reviewArr.push(
@@ -61,7 +67,11 @@ function createMasonryReview() {
       )
     );
     reviewArr.push(
-      new Review("Marek T.", "Pizza Margherita to mistrzostwo świata. Polecam!", reviewPizza)
+      new Review(
+        "Marek T.",
+        "Pizza Margherita to mistrzostwo świata. Polecam!",
+        reviewPizza
+      )
     );
     reviewArr.push(
       new Review(
@@ -102,7 +112,8 @@ function createMasonryReview() {
     reviewArr.push(
       new Review(
         "Natalia L.",
-        "Pyszna pizza, świetne wino i przytulna atmosfera. Idealne miejsce na romantyczną kolację.", reviewPizza1
+        "Pyszna pizza, świetne wino i przytulna atmosfera. Idealne miejsce na romantyczną kolację.",
+        reviewPizza1
       )
     );
     reviewArr.push(
@@ -120,7 +131,8 @@ function createMasonryReview() {
     reviewArr.push(
       new Review(
         "Robert P.",
-        "Pizza była dobra, ale brakowało mi trochę więcej opcji wegetariańskich. Mimo to warto odwiedzić!", reviewPizza2
+        "Pizza była dobra, ale brakowało mi trochę więcej opcji wegetariańskich. Mimo to warto odwiedzić!",
+        reviewPizza2
       )
     );
     reviewArr.push(
@@ -141,59 +153,58 @@ function createMasonryReview() {
         "Polecam! Pizza była pyszna, a atmosfera bardzo przyjemna. Idealne miejsce na spotkanie ze znajomymi."
       )
     );
-  };
+  }
 
   function createElement() {
     makeReviewArr();
 
-    let masonryContainer = document.createElement('div');
-    masonryContainer.classList.add('masonry-reviews');
+    let masonryContainer = document.createElement("div");
+    masonryContainer.classList.add("masonry-reviews");
 
     for (let i = 0; i < reviewArr.length; i++) {
-        masonryContainer.appendChild(reviewArr[i].createTile());
+      masonryContainer.appendChild(reviewArr[i].createTile());
     }
 
     container.appendChild(masonryContainer);
   }
   createElement();
-};
-
+}
 
 class Review {
-    constructor(name, review, photo) {
-      (this.name = name), (this.review = review), (this.photo = photo);
-    }
-  
-    createTile() {
-      this.tile = document.createElement("div");
-      this.tile.classList.add("review-tile");
-  
-      this.head = document.createElement("h3");
-      this.head.classList.add("name");
-      this.head.textContent = this.name;
-  
-      this.text = document.createElement("p");
-      this.text.classList.add("review");
-      this.text.textContent = this.review;
-  
-      this.tile.appendChild(this.head);
-      this.tile.appendChild(this.text);
-  
-      if (this.photo) {
-        this.img = document.createElement("img");
-        this.img.src = this.photo;
-        this.tile.appendChild(this.img);
-      }
-
-      return this.tile;
-    }
+  constructor(name, review, photo) {
+    (this.name = name), (this.review = review), (this.photo = photo);
   }
 
-let createHomePage = () => {
-    let createHero = new Hero();
-    
-    createHero.createElement();
-    createMasonryReview();
+  createTile() {
+    this.tile = document.createElement("div");
+    this.tile.classList.add("review-tile");
+
+    this.head = document.createElement("h3");
+    this.head.classList.add("name");
+    this.head.textContent = this.name;
+
+    this.text = document.createElement("p");
+    this.text.classList.add("review");
+    this.text.textContent = this.review;
+
+    this.tile.appendChild(this.head);
+    this.tile.appendChild(this.text);
+
+    if (this.photo) {
+      this.img = document.createElement("img");
+      this.img.src = this.photo;
+      this.tile.appendChild(this.img);
+    }
+
+    return this.tile;
+  }
 }
+
+let createHomePage = () => {
+  let createHero = new Hero();
+
+  createHero.createElement();
+  createMasonryReview();
+};
 
 export default createHomePage;

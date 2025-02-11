@@ -1,6 +1,7 @@
 import "./styles.css";
 import createHomePage from "./modules/home";
 import createMenuPage from "./modules/menu";
+import createContactPage from "./modules/contact";
 
 const navBar = document.querySelector(".nav-btns");
 
@@ -12,7 +13,6 @@ function clearPage() {
 
 navBar.addEventListener("click", (event) => {
   const target = event.target;
-  const content = document.getElementById("content");
 
   switch (target.id) {
     case "o-nas":
@@ -21,11 +21,11 @@ navBar.addEventListener("click", (event) => {
       break;
     case "menu":
       clearPage();
-        createMenuPage();
+      createMenuPage();
       break;
     case "kontakt":
       clearPage();
-
+      createContactPage();
       break;
 
     default:
@@ -33,4 +33,7 @@ navBar.addEventListener("click", (event) => {
   }
 });
 
-// createHomePage();
+createHomePage();
+
+export {clearPage, createContactPage};
+

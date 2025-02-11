@@ -151,6 +151,8 @@ table {
 
 body {
   background: var(--dark);
+  position: relative;
+  min-height: 100vh;
 }
 
 .flag {
@@ -241,7 +243,7 @@ body {
   }
 
   &:hover::before {
-    transform: scale(1, 1.1);
+    transform: scale(1.1, 1.1);
   }
 }
 
@@ -395,7 +397,7 @@ body {
 	}
 
 	& ol {
-		border-bottom: 2px solid var(--dark);
+		border-bottom: 1px solid var(--dark);
 		padding-bottom: 1.5rem;
 		margin-bottom: 1.5rem;
 		list-style: decimal;
@@ -431,7 +433,41 @@ body {
 	}
 }
 
+.kontakt {
+	background: var(--white);
+	width: var(--main-tile-width);
+	padding: var(--large-padding);
+	border-radius: 1rem;
+
+	& h2 {
+		font-size: 2.5rem;
+		text-align: center;
+	}
+
+	& div {
+		margin-bottom: 2rem;
+
+		& h3 {
+			font-size: 1.5rem;
+			margin-bottom: 0.5rem;
+			margin-left: 1rem;
+			font-style: italic;
+		}
+	
+		& p {
+			font-size: 2rem;
+		}
+	}
+
+	& iframe {
+		border-radius: 1rem;
+		box-shadow: 0 0 3px black;
+	}
+}
+
 footer {
+	position: absolute;
+	bottom: 0;
   box-sizing: border-box;
   width: 100%;
   text-align: center;
