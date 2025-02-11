@@ -4,7 +4,7 @@ import reviewPizza1 from "../imgs/rw-pizza1.jpg"
 import reviewPizza2 from "../imgs/rw-pizza2.jpg"
 
 class Hero {
-  constructor(heading, text, img) {
+  constructor() {
     this.headingTxt = "Smak Włoch na Twoim talerzu!";
     this.textTxt =
       "Witaj w naszej tradycyjnej włoskiej pizzerii i trattorii, gdzie każdy kęs to podróż do słonecznej Italii. Serwujemy autentyczne pizze z chrupiącym ciastem, świeże makarony i dania rodem z włoskiej trattorii, przygotowane z pasją i najlepszych składników. Odkryj prawdziwy smak Włoch – bez biletu lotniczego!";

@@ -90,6 +90,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -378,6 +379,56 @@ body {
     max-height: 50%;
     border-radius: 1rem;
   }
+}
+
+.menu {
+	background-color: var(--white);
+	width: var(--main-tile-width);
+	border-radius: 1rem;
+	padding: var(--large-padding);
+
+	& h2 {
+		font-size: 2rem;
+		margin-left: 2rem;
+		font-style: italic;
+		font-weight: 600;
+	}
+
+	& ol {
+		border-bottom: 2px solid var(--dark);
+		padding-bottom: 1.5rem;
+		margin-bottom: 1.5rem;
+		list-style: decimal;
+		margin-left: 1rem;
+
+		&:last-child {
+			border-bottom: none;
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+	}
+
+	& li {
+		margin: 1rem 0;
+
+		& h3 {
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+		}
+
+		& p {
+			margin-left: 2rem;
+		}
+	}
+
+	&::before {
+		content: "Menu";
+		font-size: 2.5rem;
+		text-align: center;
+		display: inline-block;
+		width: 100%;
+		margin-bottom: 2rem;
+	}
 }
 
 footer {
